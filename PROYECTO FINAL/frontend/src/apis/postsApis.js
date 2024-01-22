@@ -45,7 +45,7 @@ let publicacionesMock = [
 export const getCards = async () => {
   let publicaciones = [];
   let url = baseBackendURL + `/publicaciones`;
-  /*await fetch(url, {
+  await fetch(url, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -53,6 +53,7 @@ export const getCards = async () => {
       "Access-Control-Allow-Origin": "*",
     },
   })
+    .then((response) => response.json())  // Parsea la respuesta a JSON
     .then((data) => {
       publicaciones = data;
     })
@@ -60,12 +61,19 @@ export const getCards = async () => {
       console.error(error);
       throw new Error(error);
     });
-*/
-  // TODO: traerlo del back
-  publicaciones = publicacionesMock;
+
   return publicaciones;
 };
 
+
 export const getCardByID = async (id) => {
-  return publicacionesMock[Number(id)] ? publicacionesMock[Number(id)] : {};
+  let url = baseBackendURL + `/publicaciones/${id}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(error);
+  }
 };

@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background: url('67736859-dibujado-a-mano-vector-de-patrón-de-comida-rápida-sin-problemas-los-elementos-de-comida-del.jpg') center/cover no-repeat; /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
+}
+

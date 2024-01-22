@@ -15,7 +15,7 @@ const Footer = () => {
                 <svg className="bi" width="30" height="24"></svg>
               </a>
               <span className="mb-3 mb-md-0 text-body-secondary">
-                © 2023 Company, Inc
+                © 2023 Sabores Company, Inc
               </span>
             </div>
           </footer>
