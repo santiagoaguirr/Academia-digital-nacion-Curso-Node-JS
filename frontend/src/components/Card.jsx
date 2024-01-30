@@ -7,14 +7,12 @@ const Card = (props) => {
   const { data, onDelete } = props;
 
   const handleDelete = async () => {
-    // Muestra un cuadro de diálogo de confirmación
     const isConfirmed = window.confirm(
       "¿Estás seguro de eliminar esta publicación?"
     );
 
     if (isConfirmed) {
       try {
-        // Llamada a la función deletePost para eliminar la publicación
         await deletePost(data._id);
 
         onDelete(data._id);

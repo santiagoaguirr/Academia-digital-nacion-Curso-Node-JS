@@ -1,5 +1,3 @@
-// index.js
-
 const express = require("express");
 const cors = require("cors");
 const connectToDatabase = require("./conexion");
@@ -23,7 +21,7 @@ app.use("/publicaciones", publicacionesRoutes);
 // Rutas de autenticación
 app.use("/auth", authRoutes);
 
-// Iniciar el servidor
+// Iniciar el Svvv
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });

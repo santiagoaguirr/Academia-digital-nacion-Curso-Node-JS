@@ -1,5 +1,3 @@
-// Login.jsx
-
 import React, { useState } from "react";
 
 const Login = ({ onLogin }) => {
@@ -8,7 +6,6 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      // Envía una solicitud al backend para autenticar al usuario
       const response = await fetch("/auth/login", {
         method: "POST",
         headers: {
@@ -18,11 +15,9 @@ const Login = ({ onLogin }) => {
       });
 
       if (response.ok) {
-        // Maneja el caso de inicio de sesión exitoso en el frontend
         const userData = await response.json();
         onLogin(userData);
       } else {
-        // Maneja el caso de inicio de sesión fallido
         console.error("Inicio de sesión fallido");
       }
     } catch (error) {

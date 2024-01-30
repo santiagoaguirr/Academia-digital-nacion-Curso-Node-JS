@@ -1,5 +1,3 @@
-// models/User.js
-
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
@@ -8,7 +6,6 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
-// Método para cifrar la contraseña antes de guardarla en la base de datos
 userSchema.pre("save", async function (next) {
   try {
     const salt = await bcrypt.genSalt(10);

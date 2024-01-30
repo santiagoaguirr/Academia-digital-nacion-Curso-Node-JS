@@ -1,4 +1,3 @@
-// ... Otras importaciones
 import { useState } from "react";
 import { createNewPost } from "../apis/postsApis";
 import { ToastContainer, toast } from "react-toastify";
@@ -24,13 +23,9 @@ const NewPost = () => {
     e.preventDefault();
 
     try {
-      // Envia la nueva publicación al backend
       await createNewPost(newPost);
 
-      // Muestra un toast de éxito
       toast.success("Nueva publicación creada con éxito");
-
-      // Limpia el formulario después de enviar
       setNewPost({
         titulo: "",
         descripcion: "",
@@ -38,7 +33,6 @@ const NewPost = () => {
         comentarios: [],
       });
     } catch (error) {
-      // Muestra un toast de error si ocurre un problema
       toast.error("Error al enviar la nueva publicación");
       console.error("Error al enviar la nueva publicación:", error);
     }
@@ -91,7 +85,7 @@ const NewPost = () => {
         </button>
       </form>
 
-      {/* Agrega ToastContainer al final del componente */}
+      {/*Agrega ToastContainer */}
       <ToastContainer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCardByID, addCommentToPost } from "../apis/postsApis";
 import "../styles/Comentarios.css";
-import "../styles/Post.css"; // Agregamos el nuevo archivo de estilos
+import "../styles/Post.css";
 
 const Post = () => {
   const postId = window.location.pathname.split("/")[1];
@@ -36,13 +36,11 @@ const Post = () => {
       });
 
       if (response) {
-        // Actualizar el estado para reflejar el nuevo comentario
         setCardData((prevData) => ({
           ...prevData,
           comentarios: [...prevData.comentarios, newComment],
         }));
 
-        // Limpiar el campo del nuevo comentario
         setNewComment("");
 
         console.log("Comentario agregado exitosamente");
@@ -69,7 +67,7 @@ const Post = () => {
             </h1>
             <p className="lead">{cardData.descripcion}</p>
 
-            {/* Formulario para agregar comentarios */}
+            {/* Forms para agregar coments*/}
             <div className="mb-4">
               <label className="form-label">Agregar Comentario:</label>
               <textarea
