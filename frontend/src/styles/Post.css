@@ -1,0 +1,11 @@
+.post-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    max-width: 80%;
+    /* Ajusta este valor según tus preferencias */
+}

@@ -1,0 +1,20 @@
+/* Comentarios.css */
+
+.comment-container-wrapper {
+    width: 100%;
+}
+
+.comment-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Agrega bordes redondeados */
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Agrega una ligera sombra */
+}
+
+.comment-text {
+    margin: 0;
+}
