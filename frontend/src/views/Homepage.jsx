@@ -1,4 +1,6 @@
+// Homepage.jsx
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
 import "../styles/Homepage.css";
 
 import { getCards } from "../apis/postsApis";
@@ -42,9 +44,15 @@ const Homepage = () => {
                 Descubre una experiencia única de sabores exquisitos.
               </p>
               <p>
-                <a href="/newPost" className="btn btn-primary my-2">
+                <Link to="/newPost" className="btn btn-primary my-2">
                   Crear posteo
-                </a>
+                </Link>{" "}
+                <Link to="/login" className="btn btn-outline-primary mx-2">
+                  Iniciar sesión
+                </Link>{" "}
+                <Link to="/registro" className="btn btn-outline-primary mx-2">
+                  Registrarse
+                </Link>
               </p>
             </div>
           </div>
