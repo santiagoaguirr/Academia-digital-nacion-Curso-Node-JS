@@ -1,6 +1,5 @@
-// Homepage.jsx
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
+import { Link } from "react-router-dom";
 import "../styles/Homepage.css";
 
 import { getCards } from "../apis/postsApis";

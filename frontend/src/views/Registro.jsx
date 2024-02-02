@@ -51,14 +51,14 @@ const Registro = () => {
       />
       <button onClick={handleRegistro}>Registrarse</button>
 
-      {/* Mostrar confirmación si el registro es exitoso */}
+      {/* Mostrame confirmación si el registro es exitoso */}
       {registroExitoso && (
         <p style={{ color: "green" }}>
           ¡Registro exitoso! Ahora puedes iniciar sesión.
         </p>
       )}
 
-      {/* Mostrar mensaje de error si ocurre un error */}
+      {/* Mostrame mensaje de error si hay un error */}
       {errorMensaje && <p style={{ color: "red" }}>{errorMensaje}</p>}
     </div>
   );

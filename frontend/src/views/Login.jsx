@@ -1,11 +1,10 @@
-// Login.jsx
 import React, { useState } from "react";
 
 const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const [mensajeColor, setMensajeColor] = useState(""); // Nuevo estado para el color del mensaje
+  const [mensajeColor, setMensajeColor] = useState("");
 
   const handleLogin = async () => {
     try {
@@ -18,21 +17,17 @@ const Login = () => {
       });
 
       if (response.ok) {
-        // Si el estado de la respuesta es exitoso (2xx), entonces procesa la respuesta
         const data = await response.json();
 
-        // Puedes realizar acciones adicionales basadas en la respuesta del backend
-        setMensajeColor("green"); // Establece el color del mensaje a verde
+        setMensajeColor("green");
         setMensaje("Inicio de sesión exitoso");
       } else {
-        // Si el estado de la respuesta no es exitoso, entonces muestra un mensaje de error
         const errorData = await response.json();
-        setMensajeColor("red"); // Establece el color del mensaje a rojo
+        setMensajeColor("red");
         setMensaje(`Error: ${errorData.error}`);
       }
     } catch (error) {
-      // En caso de cualquier error en la solicitud, muestra un mensaje de error
-      setMensajeColor("red"); // Establece el color del mensaje a rojo
+      setMensajeColor("red");
       setMensaje(`Error al realizar la solicitud: ${error.message}`);
       console.error("Error al realizar la solicitud:", error);
     }

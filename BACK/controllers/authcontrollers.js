@@ -13,7 +13,6 @@ const registerUser = async (usuario, contrasena) => {
       throw new Error("El usuario ya existe");
     }
 
-    // Asegúrate de que la contraseña no esté vacía
     if (!contrasena) {
       throw new Error("La contraseña no puede estar vacía");
     }
@@ -21,7 +20,6 @@ const registerUser = async (usuario, contrasena) => {
     // Hashea la contraseña antes de almacenarla
     const hashedPassword = await bcrypt.hash(contrasena, 10);
 
-    // Crea un nuevo usuario utilizando Mongoose
     await User.create({ usuario, contrasena: hashedPassword });
   } catch (error) {
     console.error("Error en el registro:", error.message);
